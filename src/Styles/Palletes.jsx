@@ -1,3 +1,9 @@
-export const primaryLight = "#693102";
-export const secondaryLight = "#564359";
-export const textLight = "#786201";
+export const primaryLight = "#e5e5e5";
+export const secondaryLight = "#333333";
+export const textLight = "#e5e5e5";
+export const buttonLight = "#2ea44f";
+
+export const primaryDark = "#333333";
+export const secondaryDark = "#E5E5E5";
+export const textDark = "#333333";
+export const buttonDark = "#2ea44f";

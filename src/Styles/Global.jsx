@@ -62,24 +62,12 @@ body {
     color: ${({ theme }) => theme.text}
 }
 
-html {
-    font-size: 62.5%;
-
-	@media(max-width: 1024px) {
-		font-size: 59%;
-	}
-
-	@media(max-width: 720px) {
-		font-size: 55%;
-	}
-}
-
 h1 {
-	font-size: 2rem;
+	font-size: 1.2rem;
 }
 
 p {
-	font-size: 1.6rem;
+	font-size: 1rem;
 	font-weight: 400;	
 }
 

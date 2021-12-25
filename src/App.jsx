@@ -1,17 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
 import { ThemeProvider } from "styled-components";
+import AddList from "./Components/AddList/AddList";
+import ToDoList from "./Components/ToDoList/ToDoList";
 import { GlobalStyle } from "./Styles/Global";
 import { lightTheme } from "./Styles/Theme";
 
-function App() {
-    return (
-        <ThemeProvider theme={lightTheme}>
-            <div>
-                <h1>Hello World</h1>
-            </div>
-            <GlobalStyle />
-        </ThemeProvider>
-    );
+class App extends Component {
+    render() {
+        return (
+            <ThemeProvider theme={lightTheme}>
+                <AddList />
+                <ToDoList />
+                <GlobalStyle />
+            </ThemeProvider>
+        );
+    }
 }
 
 export default App;
