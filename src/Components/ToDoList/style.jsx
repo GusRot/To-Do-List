@@ -10,14 +10,14 @@ export const Container = styled.main`
 
     section {
         min-height: 40vh;
-        width: 40%;
+        width: 50%;
         padding: 2%;
 
         background-color: ${({ theme }) => theme.secondary};
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
-        flex-direction: columns;
+        flex-direction: column;
         flex-wrap: wrap;
         gap: 1rem;
 
@@ -25,11 +25,12 @@ export const Container = styled.main`
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            width: 100%;
             gap: 0.5rem;
 
             div {
                 &:first-child {
-                    width: 30%;
+                    width: 25%;
 
                     div {
                         height: 0.8rem;
@@ -38,9 +39,9 @@ export const Container = styled.main`
                         background-color: ${({ theme }) => theme.button};
                     }
                 }
-                width: 70%;
+                width: 75%;
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
                 text-align: justify;
                 text-justify: inter-word;
