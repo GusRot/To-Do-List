@@ -1,5 +1,17 @@
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./Styles/Global";
+import { lightTheme } from "./Styles/Theme";
+
 function App() {
-    return <div className="App"></div>;
+    return (
+        <ThemeProvider theme={lightTheme}>
+            <div>
+                <h1>Hello World</h1>
+            </div>
+            <GlobalStyle />
+        </ThemeProvider>
+    );
 }
 
 export default App;
