@@ -2,11 +2,12 @@ import styled from "styled-components";
 import { transparentize } from "polished";
 
 export const Container = styled.form`
-    height: 10vh;
+    height: 20vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0.3rem;
 
     input {
         font-size: 1rem;
@@ -15,8 +16,16 @@ export const Container = styled.form`
         padding: 6px 16px;
         text-align: center;
         text-decoration: none;
-        color: background-color: ${({ theme }) => theme.button};
-        border: 1px solid rgba(27, 31, 35, 0.15);
+        margin-right: 0.3rem;
+        border: 1px solid ${({ theme }) => theme.button};
+    }
+
+    select {
+        font-weight: 500;
+        height: 2.1rem;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid ${({ theme }) => theme.button};
     }
 
     button {
@@ -44,5 +53,9 @@ export const Container = styled.form`
         &:hover {
             background-color: ${({ theme }) => theme.button};
         }
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
     }
 `;

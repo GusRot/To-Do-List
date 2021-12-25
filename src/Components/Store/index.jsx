@@ -3,21 +3,21 @@ import { createStore } from "redux";
 const initialState = {
     module: [
         {
-            category: "work",
-            text: "loremssdasasdsadasfsdfdsfdsfdsfdsfsdfdsfdsfdsdsadsadasdsa",
-            done: "no",
+            category: "Trabalho",
+            text: "Entregar Projeto X dsdsdadsdasdasdsadasdsadsadasdsadsadsadsadsadsadsadsadsadasdsa",
+            done: "#2ea44f",
             id: 1,
         },
         {
-            category: "home",
-            text: "asdasdwdsadsadas",
-            done: "no",
+            category: "Casa",
+            text: "Lavar Roupa",
+            done: "",
             id: 2,
         },
         {
-            category: "Money",
-            text: "wwwwwwwwwwww",
-            done: "no",
+            category: "Hobbies",
+            text: "Jogar Witcher III",
+            done: "",
             id: 3,
         },
     ],
@@ -25,20 +25,26 @@ const initialState = {
 
 function reducer(state = initialState, action) {
     if (action.type === "ADD_TASK") {
-        console.log({ module: [...state.module, action.content] });
         return {
             module: [...state.module, action.content],
         };
     }
 
     if (action.type === "TOGGLE_DONE") {
+        const arr = [];
         for (let i = 0; i < state.module.length; i++) {
             if (state.module[i].id === action.module.id) {
-                if (action.module.done === "yes") {
-                    action.module.done = "no";
-                } else action.module.done = "yes";
+                if (action.module.done === "#2ea44f") {
+                    action.module.done = "";
+                } else action.module.done = "#2ea44f";
+                arr.push(action.module);
+            } else {
+                arr.push(state.module[i]);
             }
         }
+        return {
+            module: [...arr],
+        };
     }
 
     return state;

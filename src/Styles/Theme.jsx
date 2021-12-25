@@ -3,6 +3,10 @@ import {
     secondaryLight,
     textLight,
     buttonLight,
+    primaryDark,
+    secondaryDark,
+    textDark,
+    buttonDark,
 } from "./Palletes";
 
 export const lightTheme = {
@@ -10,4 +14,11 @@ export const lightTheme = {
     secondary: secondaryLight,
     text: textLight,
     button: buttonLight,
+};
+
+export const darkTheme = {
+    body: primaryDark,
+    secondary: secondaryDark,
+    text: textDark,
+    button: buttonDark,
 };

@@ -1,32 +1,53 @@
 import React, { Component } from "react";
 import { Container } from "./style";
 import { connect } from "react-redux";
-
 class AddList extends Component {
     constructor() {
         super();
-        this.titulo = "";
+        this.title = "";
+        this.categories = ["Trabalho", "Casa", "Hobbies"];
+        this.categorySelected = "";
+        this.id = 4;
     }
 
     submit(event) {
         event.preventDefault();
+        this.id += 1;
     }
 
-    handleInput(event) {
-        this.titulo = event.target.value;
+    handleTitle(event) {
+        this.title = event.target.value;
+    }
+
+    handleCategory(event) {
+        this.categorySelected = event.target.value;
+        console.log(this.categorySelected);
     }
 
     render() {
         return (
             <Container onSubmit={this.submit.bind(this)}>
-                <input
-                    type="text"
-                    placeholder="Adicione sua Nota"
-                    onChange={this.handleInput.bind(this)}
-                />
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Adicione sua Nota"
+                        onChange={this.handleTitle.bind(this)}
+                    />
+                    <select onChange={this.handleCategory.bind(this)}>
+                        <option>Sem Categoria</option>
+                        {this.categories.map((category, index) => {
+                            return <option key={index}>{category}</option>;
+                        })}
+                    </select>
+                </div>
                 <button
                     onClick={(e) => {
-                        this.props.addTask(e, this.titulo);
+                        this.props.addTask(
+                            e,
+                            this.title,
+                            this.categorySelected,
+                            this.id
+                        );
                     }}
                 >
                     Criar Nota
@@ -38,18 +59,19 @@ class AddList extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTask: (e, titulo) => dispatch(addTasks(titulo)),
+        addTask: (e, title, category, id) =>
+            dispatch(addTasks(title, category, id)),
     };
 };
 
-function addTasks(titulo) {
+function addTasks(title, category, id) {
     return {
         type: "ADD_TASK",
         content: {
-            category: "text",
-            text: titulo,
-            done: "no",
-            id: "",
+            category: category,
+            text: title,
+            done: "",
+            id: id,
         },
     };
 }

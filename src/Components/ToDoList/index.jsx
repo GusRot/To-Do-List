@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "./style";
+import { Container, Div } from "./style";
 import { connect } from "react-redux";
 
 function toggleDone(module) {
@@ -12,16 +12,16 @@ function toggleDone(module) {
 const ToDoList = ({ modules, dispatch }) => (
     <Container>
         <section>
-            {modules.map((module, index) => (
-                <div key={module.category + index}>
-                    <div>
-                        <div onClick={() => dispatch(toggleDone(module))}></div>
+            {modules.map((module) => (
+                <Div color={module.done} key={module.id}>
+                    <div onClick={() => dispatch(toggleDone(module))}>
+                        <div></div>
                         <h1>{module.category}</h1>
                     </div>
                     <div>
                         <p>{module.text}</p>
                     </div>
-                </div>
+                </Div>
             ))}
         </section>
     </Container>
