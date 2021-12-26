@@ -6,4 +6,4 @@ export const buttonLight = "#2ea44f";
 export const primaryDark = "#333333";
 export const secondaryDark = "#E5E5E5";
 export const textDark = "#333333";
-export const buttonDark = "#2ea44f";
+export const buttonDark = "#1A9DDE";

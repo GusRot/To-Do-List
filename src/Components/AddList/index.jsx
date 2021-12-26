@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 class AddList extends Component {
     constructor() {
         super();
-        this.title = "";
+        this.state = { title: "" };
         this.categories = ["Trabalho", "Casa", "Hobbies"];
         this.categorySelected = "Sem Categoria";
         this.id = 4;
@@ -13,15 +13,19 @@ class AddList extends Component {
     submit(event) {
         event.preventDefault();
         this.id += 1;
+        this.setState({
+            title: "",
+        });
     }
 
     handleTitle(event) {
-        this.title = event.target.value;
+        this.setState({
+            title: event.target.value,
+        });
     }
 
     handleCategory(event) {
         this.categorySelected = event.target.value;
-        console.log(this.categorySelected);
     }
 
     render() {
@@ -29,6 +33,8 @@ class AddList extends Component {
             <Container onSubmit={this.submit.bind(this)}>
                 <div>
                     <input
+                        name="Title"
+                        value={this.state.title}
                         type="text"
                         placeholder="Adicione sua Nota"
                         onChange={this.handleTitle.bind(this)}
@@ -36,15 +42,16 @@ class AddList extends Component {
                     <select onChange={this.handleCategory.bind(this)}>
                         <option>Sem Categoria</option>
                         {this.categories.map((category, index) => {
-                            return <option key={index}>{category}</option>;
+                            return <option key={index + 90}>{category}</option>;
                         })}
                     </select>
                 </div>
                 <button
+                    type="submit"
                     onClick={(e) => {
                         this.props.addTask(
                             e,
-                            this.title,
+                            this.state.title,
                             this.categorySelected,
                             this.id
                         );

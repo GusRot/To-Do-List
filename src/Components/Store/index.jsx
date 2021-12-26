@@ -4,7 +4,7 @@ const initialState = {
     module: [
         {
             category: "Trabalho",
-            text: "Entregar Projeto X dsdsdadsdasdasdsadasdsadsadasdsadsadsadsadsadsadsadsadsadasdsa",
+            text: "Entregar Projeto X",
             done: true,
             id: 1,
         },
