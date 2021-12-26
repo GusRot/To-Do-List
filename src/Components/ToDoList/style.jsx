@@ -51,7 +51,7 @@ export const Div = styled.div`
                         max-width: 20px;
                         border: 1px solid ${({ theme }) => theme.primary};
                         background-color: ${(props) =>
-                            props.color ? props.color : "white"};
+                            props.color === "true" ? "#2ea44f" : "white"};
                         }
                 }
                 max-width: 75%;
@@ -63,7 +63,7 @@ export const Div = styled.div`
                 text-justify: inter-word;
                 word-break: break-all;
                 text-decoration:  ${(props) =>
-                    props.color ? "line-through" : ""};
+                    props.color === "true" ? "line-through" : ""};
                         };
                 line-height: 1rem;
             }

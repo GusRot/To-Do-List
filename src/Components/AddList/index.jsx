@@ -6,7 +6,7 @@ class AddList extends Component {
         super();
         this.title = "";
         this.categories = ["Trabalho", "Casa", "Hobbies"];
-        this.categorySelected = "";
+        this.categorySelected = "Sem Categoria";
         this.id = 4;
     }
 
@@ -65,12 +65,13 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 function addTasks(title, category, id) {
+    const newCategory = category === "Sem Categoria" ? "Geral" : category;
     return {
         type: "ADD_TASK",
         content: {
-            category: category,
+            category: newCategory,
             text: title,
-            done: "",
+            done: false,
             id: id,
         },
     };

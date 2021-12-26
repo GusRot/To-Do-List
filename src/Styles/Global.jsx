@@ -71,4 +71,10 @@ p {
 html {
 	min-width: 400px;
 }
+
+header {
+	position: relative;
+	max-width: 1024px; 
+	margin: 0 auto;
+}
 `;

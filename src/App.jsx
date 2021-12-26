@@ -6,26 +6,39 @@ import { GlobalStyle } from "./Styles/Global";
 import { lightTheme, darkTheme } from "./Styles/Theme";
 import { Provider } from "react-redux";
 import store from "./Components/Store";
+import Theme from "./Components/Theme";
 
 class App extends Component {
     constructor() {
         super();
-        this.theme = lightTheme;
+        this.theme = {
+            theme: lightTheme,
+            text: "Claro",
+        };
     }
 
     handleTheme() {
-        if (this.theme === darkTheme) {
-            this.theme = lightTheme;
+        console.log("ok");
+        if (this.theme.theme === darkTheme) {
+            this.theme.theme = lightTheme;
+            this.theme.text = "Claro";
         } else {
-            this.theme = darkTheme;
+            this.theme.theme = darkTheme;
+            this.theme.text = "Escuro";
         }
     }
 
     render() {
         return (
-            <ThemeProvider theme={lightTheme}>
+            <ThemeProvider theme={this.theme.theme}>
                 <Provider store={store}>
-                    <AddList />
+                    <header>
+                        <Theme
+                            themeFunction={this.handleTheme.bind(this)}
+                            theme={this.theme}
+                        />
+                        <AddList />
+                    </header>
                     <ToDoList />
                 </Provider>
                 <GlobalStyle />

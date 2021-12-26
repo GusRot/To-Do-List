@@ -5,19 +5,19 @@ const initialState = {
         {
             category: "Trabalho",
             text: "Entregar Projeto X dsdsdadsdasdasdsadasdsadsadasdsadsadsadsadsadsadsadsadsadasdsa",
-            done: "#2ea44f",
+            done: true,
             id: 1,
         },
         {
             category: "Casa",
             text: "Lavar Roupa",
-            done: "",
+            done: false,
             id: 2,
         },
         {
             category: "Hobbies",
             text: "Jogar Witcher III",
-            done: "",
+            done: false,
             id: 3,
         },
     ],
@@ -34,9 +34,9 @@ function reducer(state = initialState, action) {
         const arr = [];
         for (let i = 0; i < state.module.length; i++) {
             if (state.module[i].id === action.module.id) {
-                if (action.module.done === "#2ea44f") {
-                    action.module.done = "";
-                } else action.module.done = "#2ea44f";
+                if (action.module.done === true) {
+                    action.module.done = false;
+                } else action.module.done = true;
                 arr.push(action.module);
             } else {
                 arr.push(state.module[i]);
