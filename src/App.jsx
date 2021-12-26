@@ -11,7 +11,7 @@ import Theme from "./Components/Theme";
 class App extends Component {
     constructor() {
         super();
-        this.theme = {
+        this.state = {
             theme: lightTheme,
             text: "Claro",
         };
@@ -19,23 +19,27 @@ class App extends Component {
 
     handleTheme() {
         console.log("ok");
-        if (this.theme.theme === darkTheme) {
-            this.theme.theme = lightTheme;
-            this.theme.text = "Claro";
+        if (this.state.theme === darkTheme) {
+            this.setState({
+                theme: lightTheme,
+                text: "Claro",
+            });
         } else {
-            this.theme.theme = darkTheme;
-            this.theme.text = "Escuro";
+            this.setState({
+                theme: darkTheme,
+                text: "Escuro",
+            });
         }
     }
 
     render() {
         return (
-            <ThemeProvider theme={this.theme.theme}>
+            <ThemeProvider theme={this.state.theme}>
                 <Provider store={store}>
                     <header>
                         <Theme
                             themeFunction={this.handleTheme.bind(this)}
-                            theme={this.theme}
+                            theme={this.state}
                         />
                         <AddList />
                     </header>
