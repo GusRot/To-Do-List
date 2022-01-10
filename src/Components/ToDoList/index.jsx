@@ -1,13 +1,7 @@
 import React from "react";
 import { Container, Div } from "./style";
 import { connect } from "react-redux";
-
-function toggleDone(module) {
-    return {
-        type: "TOGGLE_DONE",
-        module,
-    };
-}
+import { toggleDone } from "../Store/actions";
 
 const ToDoList = ({ modules, dispatch }) => (
     <Container>

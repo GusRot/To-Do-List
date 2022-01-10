@@ -4,21 +4,15 @@ const initialState = {
     module: [
         {
             category: "Trabalho",
-            text: "Entregar Projeto X",
-            done: true,
+            text: "To do Teste",
+            done: false,
             id: 1,
         },
         {
-            category: "Casa",
-            text: "Lavar Roupa",
-            done: false,
-            id: 2,
-        },
-        {
-            category: "Hobbies",
-            text: "Jogar Witcher III",
-            done: false,
-            id: 3,
+            category: "Trabalho",
+            text: "Entregar Projeto X",
+            done: true,
+            id: 1,
         },
     ],
 };

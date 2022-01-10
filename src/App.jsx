@@ -18,7 +18,6 @@ class App extends Component {
     }
 
     handleTheme() {
-        console.log("ok");
         if (this.state.theme === darkTheme) {
             this.setState({
                 theme: lightTheme,

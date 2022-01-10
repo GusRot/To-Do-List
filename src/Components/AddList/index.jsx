@@ -8,6 +8,9 @@ class AddList extends Component {
         this.categories = ["Trabalho", "Casa", "Hobbies"];
         this.categorySelected = "Sem Categoria";
         this.id = 4;
+        this.submit = this.submit.bind(this);
+        this.handleTitle = this.handleTitle.bind(this);
+        this.handleCategory = this.handleCategory.bind(this);
     }
 
     submit(event) {
@@ -30,16 +33,16 @@ class AddList extends Component {
 
     render() {
         return (
-            <Container onSubmit={this.submit.bind(this)}>
+            <Container onSubmit={this.submit}>
                 <div>
                     <input
                         name="Title"
                         value={this.state.title}
                         type="text"
                         placeholder="Adicione sua Nota"
-                        onChange={this.handleTitle.bind(this)}
+                        onChange={this.handleTitle}
                     />
-                    <select onChange={this.handleCategory.bind(this)}>
+                    <select onChange={this.handleCategory}>
                         <option>Sem Categoria</option>
                         {this.categories.map((category, index) => {
                             return <option key={index + 90}>{category}</option>;
