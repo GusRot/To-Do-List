@@ -7,7 +7,7 @@ class AddList extends Component {
         this.state = { title: "" };
         this.categories = ["Trabalho", "Casa", "Hobbies"];
         this.categorySelected = "Sem Categoria";
-        this.id = 4;
+        this.id = 22;
         this.submit = this.submit.bind(this);
         this.handleTitle = this.handleTitle.bind(this);
         this.handleCategory = this.handleCategory.bind(this);

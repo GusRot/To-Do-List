@@ -5,8 +5,9 @@ import ToDoList from "./Components/ToDoList";
 import { GlobalStyle } from "./Styles/Global";
 import { lightTheme, darkTheme } from "./Styles/Theme";
 import { Provider } from "react-redux";
-import store from "./Components/Store";
+import { store, persistor } from "./Components/Store";
 import Theme from "./Components/Theme";
+import { PersistGate } from "redux-persist/integration/react";
 
 class App extends Component {
     constructor() {
@@ -35,14 +36,16 @@ class App extends Component {
         return (
             <ThemeProvider theme={this.state.theme}>
                 <Provider store={store}>
-                    <header>
-                        <Theme
-                            themeFunction={this.handleTheme.bind(this)}
-                            theme={this.state}
-                        />
-                        <AddList />
-                    </header>
-                    <ToDoList />
+                    <PersistGate loading={null} persistor={persistor}>
+                        <header>
+                            <Theme
+                                themeFunction={this.handleTheme.bind(this)}
+                                theme={this.state}
+                            />
+                            <AddList />
+                        </header>
+                        <ToDoList />
+                    </PersistGate>
                 </Provider>
                 <GlobalStyle />
             </ThemeProvider>

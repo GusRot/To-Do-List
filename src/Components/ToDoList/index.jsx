@@ -6,8 +6,8 @@ import { toggleDone } from "../Store/actions";
 const ToDoList = ({ modules, dispatch }) => (
     <Container>
         <section>
-            {modules.map((module) => (
-                <Div color={module.done.toString()} key={module.id + 20}>
+            {modules.map((module, index) => (
+                <Div color={module.done.toString()} key={index}>
                     <div onClick={() => dispatch(toggleDone(module))}>
                         <div></div>
                         <h1>{module.category}</h1>

@@ -4,6 +4,7 @@ Usados no desenvolvimento:
 
 -   REACT - Class Component como padrão;
 -   REDUX para controle das variáveis da lista;
+-   REDUX Persist para armazenar variáveis no Storage;
 -   Styled components para gerenciar dark/light mode.
 
 [Clique aqui](to-do-list-git-main-gusrot.vercel.app) para visualizar o build do projeto.

@@ -1,4 +1,6 @@
 import { createStore } from "redux";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 const initialState = {
     module: [
@@ -6,13 +8,13 @@ const initialState = {
             category: "Trabalho",
             text: "To do Teste",
             done: false,
-            id: 1,
+            id: 20,
         },
         {
             category: "Trabalho",
             text: "Entregar Projeto X",
             done: true,
-            id: 1,
+            id: 21,
         },
     ],
 };
@@ -44,6 +46,14 @@ function reducer(state = initialState, action) {
     return state;
 }
 
-const store = createStore(reducer);
+const persistConfig = {
+    key: "root",
+    storage,
+};
 
-export default store;
+const persistedReducer = persistReducer(persistConfig, reducer);
+
+const store = createStore(persistedReducer);
+const persistor = persistStore(store);
+
+export { store, persistor };
