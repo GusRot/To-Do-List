@@ -7,7 +7,7 @@ Usados no desenvolvimento:
 -   REDUX Persist para armazenar variáveis no Storage;
 -   Styled components para gerenciar dark/light mode.
 
-[Clique aqui](to-do-list-git-main-gusrot.vercel.app) para visualizar o build do projeto.
+[Clique aqui](https://to-do-list-gusrot.vercel.app/) para visualizar o build do projeto.
 
 # Getting Started with Create React App
 
