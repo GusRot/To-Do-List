@@ -1,4 +1,4 @@
-###  Version README [English](./README-en.md) 
+###  Versão README [Português](./README.md) 
 <div style="display: flex; gap:1rem;">
 <a href="#">
 <img alt="Repository size" src="https://img.shields.io/github/repo-size/GusRot/To-Do-List">
@@ -17,18 +17,18 @@
 </a>
 </div>
 
-## 📝 O Projeto
+## 📝 Project
 
-To do List para organizar suas atividades e gestão de tempo.
+To do List to organize your activities and time management.
 
-### Usados no desenvolvimento
+### Used in development
 
-- REACT - Class Component como padrão;
-- REDUX para controle das variáveis da lista;
-- REDUX Persist para armazenar variáveis no Storage;
-- Styled components para gerenciar dark/light mode.
+- REACT - Class Component as standard;
+- REDUX to control to-do variables;
+- REDUX Persist to store variables on reload;
+- Styled components to manage dark/light mode.
 
-[Clique link aqui] (https://to-do-list-gusrot.vercel.app/) para visualizar o build do projeto.
+[click link here] (https://to-do-list-gusrot.vercel.app/) to visualize the project build.
 
 ### Getting Started with Create React App
 
